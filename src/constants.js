@@ -12,7 +12,8 @@ export const RestaurantList = [
                 "Chinese",
                 "Thalis"
             ],
-            "avgRating": "4.4"
+            "avgRating": "4.4",
+            "key": 1
 
         }
     },
@@ -26,6 +27,7 @@ export const RestaurantList = [
                 "Fast Food"
             ],
             "avgRating": "4.0",
+            "key": 2
         }
     },
     {
@@ -42,6 +44,7 @@ export const RestaurantList = [
                 "Beverages"
             ],
             "avgRating": "3.9",
+            "key": 3
         },
     },
     {
@@ -55,6 +58,7 @@ export const RestaurantList = [
                 "South Indian"
             ],
             "avgRating": "4.6",
+            "key": 4
         },
     }
 ]
