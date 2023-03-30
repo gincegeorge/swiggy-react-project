@@ -9,7 +9,7 @@ export const Header = () => {
     return (
         <div className="header">
             <div className="log">
-                <h1>SWIGGY</h1>
+                <h1>Swiggy</h1>
             </div>
             <div className="nav">
                 <ul>
