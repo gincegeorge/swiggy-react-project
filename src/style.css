@@ -2,9 +2,11 @@ body,
 p {
     font-size: 18px;
 }
-p{
+
+p {
     overflow: hidden;
 }
+
 #root {
     max-width: 1200px;
     margin: 20px auto;
@@ -32,14 +34,21 @@ p{
 }
 
 /* body */
-.container{
+.container {
     margin: 20px 0;
+    text-align: center;
 }
+
 .search-container {
     text-align: center;
 }
+
 .search-btn {
     margin: 0 20px 0 10px;
+}
+
+form {
+    display: inline-block;
 }
 
 
@@ -50,7 +59,8 @@ p{
     gap: 20px;
 }
 
-.card {
+.card,
+.shimmer-card {
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
     font-size: 30px;
@@ -58,7 +68,26 @@ p{
     flex: 23%;
     box-sizing: border-box;
     max-width: 24%;
+    color: #000;
+    text-decoration: none;
+    transform: scale(1);
+    transition: ease .3s;
+}
 
+.card:hover{
+    transform: scale(1.1);
+    transition: ease .3s;
+}
+
+.resTitle{
+    margin: 10px 0;
+}
+
+.shimmer-card {
+    background-color: lightgray;
+    width: 200px;
+    height: 200px;
+    border: none;
 }
 
 img {
