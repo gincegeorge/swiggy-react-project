@@ -2,6 +2,7 @@ import { useState, useEffect as Effect } from "react"
 import { RestaurantCard } from "./RestaurantCard"
 import { ShimmerNew } from "./ShimmerNew"
 import { Link } from "react-router-dom";
+import { RESTAURENT_LIST } from "../constants";
 
 function filterData(searchText, restaurants) {
     return restaurants.filter((restaurants) => restaurants.data.name.toLowerCase().includes(searchText.toLowerCase()))
@@ -13,15 +14,12 @@ export const Body = () => {
     const [filteredRestaurants, setfilteredRestaurants] = useState([])
 
     Effect(() => {
-        console.log('before API CALL ');
         getRestaurents()
-        console.log('after API CALL');
     }, [])
 
     const getRestaurents = async () => {
         try {
-            console.log('API call');
-            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.9312328&lng=76.26730409999999&page_type=DESKTOP_WEB_LISTING")
+            const data = await fetch(RESTAURENT_LIST)
 
             const jsonData = await data.json()
 
@@ -29,11 +27,10 @@ export const Body = () => {
             setfilteredRestaurants(jsonData?.data?.cards[2]?.data?.data?.cards)
 
         } catch (error) {
-            console.log('erororrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr');
+            console.log(error);
         }
     }
 
-    console.log('render');
 
     if (allRestaurents.length === 0) {
         return <ShimmerNew />
@@ -68,7 +65,6 @@ export const Body = () => {
                 <div className="cards">
                     {
                         filteredRestaurants.map((restaurant) => {
-                            console.log(restaurant.data.id);
                             return (
                                 <Link to={"restaurent/" + restaurant.data.id} className="card">
                                     <RestaurantCard {...restaurant.data} key={restaurant.data.id} />

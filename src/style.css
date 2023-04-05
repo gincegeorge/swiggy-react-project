@@ -1,10 +1,16 @@
 body,
 p {
     font-size: 18px;
-}
-
-p {
     overflow: hidden;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px 0;
 }
 
 #root {
@@ -35,8 +41,9 @@ p {
 
 /* body */
 .container {
-    margin: 20px 0;
     text-align: center;
+    margin: 20px 0;
+    min-height: 500px;
 }
 
 .search-container {
@@ -74,12 +81,12 @@ form {
     transition: ease .3s;
 }
 
-.card:hover{
+.card:hover {
     transform: scale(1.1);
     transition: ease .3s;
 }
 
-.resTitle{
+.resTitle {
     margin: 10px 0;
 }
 
