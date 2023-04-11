@@ -31,7 +31,7 @@ export const Body = () => {
     }
   };
 
-  if (allRestaurents.length === 0) {
+  if (allRestaurents?.length === 0) {
     return <ShimmerNew />;
   }
   return (

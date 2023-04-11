@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline.js";
+import UserContext from "../utils/UserContext.js";
 
 export const Header = () => {
-  console.log("render");
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const onlineStatus = useOnline();
+
+  const { user } = useContext(UserContext);
 
   return (
     <div className="flex mx-auto max-w-7xl p-10 mb-5 align-middle justify-between bg-red-50">
@@ -44,13 +46,16 @@ export const Header = () => {
         <li className="px-2">
           {onlineStatus ? "🟢" : "🔴"}
           {isLoggedIn ? (
-            <button
-              onClick={() => {
-                setIsLoggedIn(false);
-              }}
-            >
-              Log out{" "}
-            </button>
+            <>
+              <span className="mr-2">{user.name}</span>
+              <button
+                onClick={() => {
+                  setIsLoggedIn(false);
+                }}
+              >
+                Log out{" "}
+              </button>
+            </>
           ) : (
             <button
               onClick={() => {

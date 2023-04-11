@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Section = ({ title, desc, isVisible, setIsVisible, hideSection }) => {
   return (
-    <div className="my-5 bg-slate-600 text-[#fff] p-5 border text-left">
+    <div className="my-2 bg-slate-600 text-[#fff] p-5 border text-left">
       <h3 className="font-bold text-xl mb-3">{title}</h3>
       <div className="my-2">
         {isVisible ? (
@@ -54,7 +54,7 @@ const Instamart = () => {
           setIsVisible={() => setVisibleSection("careers")}
           hideSection={() => setVisibleSection("")}
         />
-        <div className="container">
+        <div className="mt-10">
           <h1>Instamart page </h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
