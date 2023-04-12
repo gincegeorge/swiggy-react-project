@@ -14,16 +14,14 @@ const useRestaurent = (resId) => {
             const data = await fetch(RESTAURENT_DATA_URL + id)
             const jsonData = await data.json()
 
-            console.log('data loaded');
-
-            setRestaurent(jsonData.data.cards[0].card.card.info)
+            setRestaurent(jsonData.data)
 
         } catch (err) {
             console.log(err);
         }
     }
 
-    
+
     return Restaurent
 }
 
