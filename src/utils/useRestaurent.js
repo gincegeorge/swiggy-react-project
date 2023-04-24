@@ -15,6 +15,8 @@ const useRestaurent = (resId) => {
             const jsonData = await data.json()
 
             setRestaurent(jsonData.data)
+            console.log('api call');
+            console.log(jsonData.data);
 
         } catch (err) {
             console.log(err);

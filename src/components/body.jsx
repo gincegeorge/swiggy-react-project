@@ -24,6 +24,8 @@ export const Body = () => {
 
       const jsonData = await data.json();
 
+      console.log("API call", jsonData?.data);
+
       setAllRestaurent(jsonData?.data?.cards[2]?.data?.data?.cards);
       setfilteredRestaurants(jsonData?.data?.cards[2]?.data?.data?.cards);
     } catch (error) {
@@ -77,20 +79,20 @@ export const Body = () => {
         </div>
       </div>
 
-      {filteredRestaurants.length === 0 ? (
+      {filteredRestaurants?.length === 0 ? (
         <div className="container">
           <h1>No restaurant matches the search</h1>
         </div>
       ) : (
         <div className="grid grid-cols-5 gap-y-6 gap-x-4">
-          {filteredRestaurants.map((restaurant) => {
+          {filteredRestaurants?.map((restaurant) => {
             return (
               <Link
-                to={"restaurent/" + restaurant.data.id}
+                to={"restaurent/" + restaurant?.data?.id}
                 className="card"
-                key={restaurant.data.id}
+                key={restaurant?.data?.id}
               >
-                <RestaurantCard {...restaurant.data} />
+                <RestaurantCard {...restaurant?.data} />
               </Link>
             );
           })}
